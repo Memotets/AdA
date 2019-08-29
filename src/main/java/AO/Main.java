@@ -16,11 +16,11 @@ public class Main {
     public static void main(String[] args) {
         burbuja bur = new burbuja();
         
-        double originalA [] = Herramientas.generarArrayAleatorio(50000, 3000);
-      //  double originalB [] = Herramientas.generarArrayMejor(50000);
+      //  double originalA [] = Herramientas.generarArrayAleatorio(50000, 3000);
+        double originalB [] = Herramientas.generarArrayMejor(50000);
        // double originalW [] = Herramientas.generarArrayPeor(50000);
        for(int i =0; i<20; i++){
-        bur.definirDatos(originalA.clone());
+        bur.definirDatos(originalB.clone());
         System.out.println("Tiempo: "+bur.ordenar());
        }
         System.out.print("");
