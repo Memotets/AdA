@@ -5,6 +5,7 @@
  */
 package AO;
 
+import Recursive.Factorial;
 import java.util.ArrayList;
 import ordenamiento.AlgoritmoOrdenamiento;
 import ordenamiento.burbuja;
@@ -22,18 +23,20 @@ import ordenamiento.Manager;
  */
 public class Main {
     public static void main(String[] args) {
-       burbuja bur1 = new burbuja();
-       burbujaOptimizado bur2 = new burbujaOptimizado();
-       IncertSort prueba3 = new IncertSort();
-
-             
-       ArrayList<AlgoritmoOrdenamiento>  lista= new ArrayList<>();
-       lista.add(bur1);
-       lista.add(bur2);
-       lista.add(prueba3);
-       
-       Manager machoman = new Manager(lista);
-       machoman.ejecutarPrueba(1000, 7, 50, true);
-        
+//       burbuja bur1 = new burbuja(true);
+//       burbujaOptimizado bur2 = new burbujaOptimizado(true);
+//       IncertSort prueba3 = new IncertSort(true);
+//             
+//       ArrayList<AlgoritmoOrdenamiento>  lista= new ArrayList<>();
+//       lista.add(bur1);
+//       lista.add(bur2);
+//       lista.add(prueba3);
+//       
+//       Manager machoman = new Manager(lista);
+//       machoman.ejecutarPrueba(1000, 20,1000, true);
+       System.out.println("No recursivo: "+Factorial.factorialNoRecursive(4));
+       System.out.println("Recursivo: "+Factorial.factorialRecursive(4));
+       System.out.println(Factorial.fiboNoRec(46));
+      
   }
 }
