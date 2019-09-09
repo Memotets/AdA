@@ -31,6 +31,8 @@ public class Manager {
        
        for(int p=0; p<pruebas;p++){
            double datos[] = Herramientas.generarArrayAleatorio((p)*rango, rangoAlt);
+           //double datos[] = Herramientas.generarArrayPeor((p)*rango);
+           //double datos[] = Herramientas.generarArrayMejor((p)*rango);
            for(int a=0; a<this.metodos.size() ; a++){
                AlgoritmoOrdenamiento aux = this.metodos.get(a);
                aux.definirDatos(datos.clone());
@@ -68,5 +70,56 @@ public class Manager {
         
     }
     
+    public void ejecutarPruebaMejor (int pruebas, int rango,  boolean grafica){
+       ArrayList<Double []> tiemposTotales = new ArrayList<>();
+       
+       for (int j=0; j<this.metodos.size(); j++){
+           tiemposTotales.add(new Double[pruebas]);
+       }
+       
+       for(int p=0; p<pruebas;p++){
+           double datos[] = Herramientas.generarArrayMejor((p)*rango);
+           for(int a=0; a<this.metodos.size() ; a++){
+               AlgoritmoOrdenamiento aux = this.metodos.get(a);
+               aux.definirDatos(datos.clone());
+               aux.ordenar();
+               tiemposTotales.get(a)[p]= aux.getTt();
+           }
+           System.out.println(p);
+       }
+       if(grafica){
+            Grafica g = new Grafica("id Algoritmo", "Tiempo", "Prueba basica de ordenamiento");
+            for (int x=0; x<tiemposTotales.size(); x++){
+                g.agregarSerie(tiemposTotales.get(x), ""+x);
+            }
+                g.creaYmuestraGrafica();
+       }
+    }
+    
+    public void ejecutarPruebaPeor (int pruebas, int rango,  boolean grafica){
+       ArrayList<Double []> tiemposTotales = new ArrayList<>();
+       
+       for (int j=0; j<this.metodos.size(); j++){
+           tiemposTotales.add(new Double[pruebas]);
+       }
+       
+       for(int p=0; p<pruebas;p++){
+           double datos[] = Herramientas.generarArrayPeor((p)*rango);
+           for(int a=0; a<this.metodos.size() ; a++){
+               AlgoritmoOrdenamiento aux = this.metodos.get(a);
+               aux.definirDatos(datos.clone());
+               aux.ordenar();
+               tiemposTotales.get(a)[p]= aux.getTt();
+           }
+           System.out.println(p);
+       }
+       if(grafica){
+            Grafica g = new Grafica("id Algoritmo", "Tiempo", "Prueba basica de ordenamiento");
+            for (int x=0; x<tiemposTotales.size(); x++){
+                g.agregarSerie(tiemposTotales.get(x), ""+x);
+            }
+                g.creaYmuestraGrafica();
+       }
+    }
     
 }

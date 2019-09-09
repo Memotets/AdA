@@ -9,7 +9,7 @@ package Recursive;
  *
  * @author memotets89
  */
-public class Factorial {
+public class Recursive {
     public static int factorialRecursive(int n){
         if(n==0){
             return 1;
@@ -52,6 +52,16 @@ public class Factorial {
            n1=res;
        }
        return res;
+   }
+   
+   public static int Sumatoria(int a, int b){
+       if(b==0){
+           return a;
+       }
+       if(b<0){
+           return Sumatoria(a,b+1)-1;
+       }
+       return Sumatoria(a, b-1)+1;
    }
    
 }

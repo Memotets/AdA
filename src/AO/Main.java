@@ -5,7 +5,7 @@
  */
 package AO;
 
-import Recursive.Factorial;
+import Recursive.Recursive;
 import java.util.ArrayList;
 import ordenamiento.AlgoritmoOrdenamiento;
 import ordenamiento.burbuja;
@@ -13,6 +13,7 @@ import ordenamiento.burbujaOptimizado;
 import ordenamiento.IncertSort;
 
 import ordenamiento.Manager;
+import ordenamiento.MergeSort;
 
 
 
@@ -23,20 +24,20 @@ import ordenamiento.Manager;
  */
 public class Main {
     public static void main(String[] args) {
-//       burbuja bur1 = new burbuja(true);
-//       burbujaOptimizado bur2 = new burbujaOptimizado(true);
-//       IncertSort prueba3 = new IncertSort(true);
-//             
-//       ArrayList<AlgoritmoOrdenamiento>  lista= new ArrayList<>();
-//       lista.add(bur1);
-//       lista.add(bur2);
-//       lista.add(prueba3);
-//       
-//       Manager machoman = new Manager(lista);
-//       machoman.ejecutarPrueba(1000, 20,1000, true);
-       System.out.println("No recursivo: "+Factorial.factorialNoRecursive(4));
-       System.out.println("Recursivo: "+Factorial.factorialRecursive(4));
-       System.out.println(Factorial.fiboNoRec(46));
+       burbuja bur1 = new burbuja();
+       burbujaOptimizado bur2 = new burbujaOptimizado();
+       IncertSort prueba3 = new IncertSort();
+       MergeSort ob = new MergeSort(); 
+             
+       ArrayList<AlgoritmoOrdenamiento>  lista= new ArrayList<>();
+      // lista.add(bur1);
+       //lista.add(bur2);
+       lista.add(prueba3);
+       lista.add(ob);
+       
+       Manager machoman = new Manager(lista);
+       machoman.ejecutarPruebaPeor(5000,3, true);
+//       System.out.println("Recursivo: "+Recursive.Sumatoria(-10, -12));
       
   }
 }
