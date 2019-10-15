@@ -5,6 +5,8 @@
  */
 package ordenamiento;
 
+import static Recursive.Recursive.fibo;
+import static Recursive.Recursive.fiboRecursivoDinamico;
 import java.util.ArrayList;
 
 /**
@@ -21,7 +23,6 @@ public class Manager {
         this.metodos=cosa;
     }
     
-    
     public void ejecutarPrueba (int pruebas, int rango, int rangoAlt, boolean grafica){
        ArrayList<Double []> tiemposTotales = new ArrayList<>();
        
@@ -29,7 +30,7 @@ public class Manager {
            tiemposTotales.add(new Double[pruebas]);
        }
        
-       for(int p=0; p<pruebas;p++){
+       for(int p=1; p<pruebas;p++){
            double datos[] = Herramientas.generarArrayAleatorio((p)*rango, rangoAlt);
            //double datos[] = Herramientas.generarArrayPeor((p)*rango);
            //double datos[] = Herramientas.generarArrayMejor((p)*rango);
@@ -77,7 +78,7 @@ public class Manager {
            tiemposTotales.add(new Double[pruebas]);
        }
        
-       for(int p=0; p<pruebas;p++){
+       for(int p=1; p<pruebas;p++){
            double datos[] = Herramientas.generarArrayMejor((p)*rango);
            for(int a=0; a<this.metodos.size() ; a++){
                AlgoritmoOrdenamiento aux = this.metodos.get(a);
@@ -103,7 +104,7 @@ public class Manager {
            tiemposTotales.add(new Double[pruebas]);
        }
        
-       for(int p=0; p<pruebas;p++){
+       for(int p=1; p<pruebas;p++){
            double datos[] = Herramientas.generarArrayPeor((p)*rango);
            for(int a=0; a<this.metodos.size() ; a++){
                AlgoritmoOrdenamiento aux = this.metodos.get(a);

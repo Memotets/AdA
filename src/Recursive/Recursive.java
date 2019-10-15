@@ -10,6 +10,7 @@ package Recursive;
  * @author memotets89
  */
 public class Recursive {
+     public static int l = 0;
     public static int factorialRecursive(int n){
         if(n==0){
             return 1;
@@ -31,7 +32,7 @@ public class Recursive {
        return (n*factorialRecursive(n-1));
    }
    
-   public static int fibo(int n){
+   public static int fibo(long n){
        if (n==1){
             return 1;
        }
@@ -54,6 +55,16 @@ public class Recursive {
        return res;
    }
    
+   public static long fiboIterativoDinamico(long pos){
+        long fibos[] = new long[(int)pos+1];
+        fibos[0] = 0;
+        fibos[1] = 1;
+        for (int x=2; x<=pos;x++){
+         fibos[x] =  fibos[x-1] + fibos[x-2];
+        }
+     return fibos[(int)pos];
+}
+   
    public static int Sumatoria(int a, int b){
        if(b==0){
            return a;
@@ -63,5 +74,32 @@ public class Recursive {
        }
        return Sumatoria(a, b-1)+1;
    }
+   
+   
+     public static long fiboRecursivoDinamico(long pos){
+        if(pos<=1){
+         return pos;
+        } else {
+         long n [] = new long[(int)pos+1];
+         n[0]= 0;
+         n[1]= 1;
+//       
+         return lookUpFib(n,pos);
+        }
+            
+    }
+
+    private static long lookUpFib(long[] n, long pos) {
+        l++;
+        // caso base
+       // if(n[(int)pos]!=-1)return n[(int)pos];
+       //if(n[(int)pos]==0 || (n[(int)pos]==1 && pos ==2))return n[(int)pos];
+        if((pos==0 || pos ==1) || (n[(int)pos]!=0 && pos!=0))return n[(int)pos];
+        
+        // si no se conoce entonces calcular
+        n[(int)pos]=lookUpFib(n, pos-1)+lookUpFib(n, pos-2);
+        
+        return n[(int)pos];
+}
    
 }

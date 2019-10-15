@@ -5,15 +5,17 @@
  */
 package AO;
 
-import Recursive.Recursive;
+import static Recursive.Recursive.fibo;
+import static Recursive.Recursive.fiboRecursivoDinamico;
 import java.util.ArrayList;
 import ordenamiento.AlgoritmoOrdenamiento;
 import ordenamiento.burbuja;
 import ordenamiento.burbujaOptimizado;
 import ordenamiento.IncertSort;
+import ordenamiento.MergeSort;
+import ordenamiento.QuickSort;
 
 import ordenamiento.Manager;
-import ordenamiento.MergeSort;
 
 
 
@@ -24,20 +26,25 @@ import ordenamiento.MergeSort;
  */
 public class Main {
     public static void main(String[] args) {
-       burbuja bur1 = new burbuja();
-       burbujaOptimizado bur2 = new burbujaOptimizado();
-       IncertSort prueba3 = new IncertSort();
-       MergeSort ob = new MergeSort(); 
-             
-       ArrayList<AlgoritmoOrdenamiento>  lista= new ArrayList<>();
-      // lista.add(bur1);
-       //lista.add(bur2);
-       lista.add(prueba3);
-       lista.add(ob);
-       
-       Manager machoman = new Manager(lista);
-       machoman.ejecutarPruebaPeor(5000,3, true);
-//       System.out.println("Recursivo: "+Recursive.Sumatoria(-10, -12));
-      
+//       burbuja bur1 = new burbuja();
+//       burbujaOptimizado bur2 = new burbujaOptimizado();
+//       IncertSort prueba3 = new IncertSort();
+//       MergeSort ob = new MergeSort(); 
+//       QuickSort qs = new QuickSort();
+//       
+//       ArrayList<AlgoritmoOrdenamiento>  lista= new ArrayList<>();
+//       lista.add(bur1);
+//       lista.add(bur2);
+//       lista.add(prueba3);
+//       
+//       lista.add(ob);
+//       lista.add(qs);
+//      
+       Manager machoman = new Manager();
+       //machoman.pruebaFibo(5000, true);
+//        
+          
+          
+          
   }
 }
