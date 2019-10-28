@@ -10,9 +10,12 @@ package Dinamico;
  * @author memotets89
  */
 public class main {
-    public static void main(String[] args) {
-    TSP wop = new TSP();
-    for(int i =0; i<10;i++)wop.buscar_camino(i);
-    
-    }
+            
+             public static void main(String[] args) {
+                 
+       
+       
+       }
 }
+    
+

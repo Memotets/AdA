@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
 import java.util.StringTokenizer;
-//import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 /**
@@ -89,7 +88,7 @@ public class Herramientas {
 
             for (int i = 0; i < n; i++){
                  Random valor = new Random();
-                 pw.println(valor.nextInt(randomPeso)+"," + valor.nextInt(randomBeneficio));
+                 pw.println((valor.nextInt(randomPeso)+1)+"," + (valor.nextInt(randomBeneficio)+1));
             }
         } catch (Exception e) {
             e.printStackTrace();
