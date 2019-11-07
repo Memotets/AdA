@@ -19,11 +19,11 @@ package Caballo;
  * @author memotets89
  */
 public class main {
-     
+
     public static void main(String[] args) {
-        caballoAvido pc = new caballoAvido(8);
-        pc.resolverProblema(0,3);
-        System.out.println(pc.toString());
- 
+        caballoAvido hourse = new caballoAvido(8);
+        hourse.resolverProblema(3,4);
+        System.out.println(hourse.toString());
+
     }
 }

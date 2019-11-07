@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mochila;
+package Mochila;
 
 
 import java.io.BufferedReader;
@@ -40,14 +40,13 @@ public class Herramientas {
             //recorremos el archivo y lo leemos
             if (abre != null) {
                 FileReader archivos = new FileReader(abre);
-                BufferedReader lee = new BufferedReader(archivos);
-
-                while ((aux = lee.readLine()) != null) {
-                    texto = aux;
-                    lista.add(texto);
+                try (BufferedReader lee = new BufferedReader(archivos)) {
+                    while ((aux = lee.readLine()) != null) {
+                        texto = aux;
+                        lista.add(texto);
+                    }
+                    //System.out.println(lista.size());
                 }
-                lee.close();
-                //System.out.println(lista.size());
 
                 ArrayList<String> lista2 = new ArrayList<>();
                 for (int i = 0; i < lista.size(); i++) {
@@ -80,7 +79,7 @@ public class Herramientas {
    public static void EscribirArticulos(int randomPeso,int randomBeneficio,int n){
        
         FileWriter fichero = null;
-        PrintWriter pw = null;
+        PrintWriter pw;
         try
         {
             fichero = new FileWriter("/home/memotets89/lista.txt");
@@ -90,16 +89,14 @@ public class Herramientas {
                  Random valor = new Random();
                  pw.println((valor.nextInt(randomPeso)+1)+"," + (valor.nextInt(randomBeneficio)+1));
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException e) {
         } finally {
            try {
            // Nuevamente aprovechamos el finally para 
            // asegurarnos que se cierra el fichero.
            if (null != fichero)
               fichero.close();
-           } catch (Exception e2) {
-              e2.printStackTrace();
+           } catch (IOException e2) {
            }
         }
    }
