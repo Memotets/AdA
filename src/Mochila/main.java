@@ -13,11 +13,11 @@ import java.util.ArrayList;
  */
 public class main {
     public static void main(String[] args) {
-    Herramientas.EscribirArticulos(100, 100, 100);
+   // Herramientas.EscribirArticulos(100, 100, 100);
     Herramientas.leerDatos("/home/memotets89/lista.txt");
     ArrayList<Item> wop=Herramientas.instancias;
     System.out.println(wop.toString());
-    mochila back=new mochila(wop,10);
+    mochila back=new mochila(wop,100);
     back.buscarSolucion();
     System.out.print("");
     }

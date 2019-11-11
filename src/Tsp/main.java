@@ -26,10 +26,10 @@ public class main {
         
         //Iniciamos el tcp
         TSP MapaCiudades = new TSP(n); 
-        //Definimos nuestra ciudad inicial pensado para que la primera ciudad sea la ciudad 0
-        MapaCiudades.CiudadInicial(Grafo, n,4);
-        
-        System.out.println(MapaCiudades.toString());
+        for(int i =0; i<n;i++ ){
+         MapaCiudades.CiudadInicial(Grafo, n,i);
+        System.out.println(MapaCiudades.toString());   
+        }
     } 
 }
     
